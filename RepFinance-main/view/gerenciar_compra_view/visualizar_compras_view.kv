@@ -1,0 +1,281 @@
+<VisualizarComprasView>:
+
+    # canvas:
+    #     Color:
+    #         rgba: 188/255, 228/255, 185/255, 1
+    #     Rectangle:
+    #         size: self.size
+    #         pos: self.pos
+    Label:
+        text: "Gerenciar Compras"
+        size_hint_y: None
+        height: 100
+        font_size: "45sp"
+        color: (0, 0, 0, 1)
+        pos_hint: {"top": 1}
+        canvas.before:
+            Color:
+                rgba: 188/255, 228/255, 185/255, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        color: (0,0,0,1)
+        padding: [20, 115, 20, 15]
+        spacing: 10
+        size_hint_x: None
+        width: 800
+        pos_hint: {"center_x": 0.5}
+
+        TabbedPanel:
+            id: panel
+            do_default_tab: False
+
+            TabbedPanelItem:
+                id: buscar
+                background_color: (1,1,1,1)
+                text: "Buscar"
+
+                BoxLayout:
+                    orientation: "vertical"
+                    canvas:
+                        Color:
+                            rgba: 1,1,1,1
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+
+                    ScrollView:
+                        BoxLayout:
+                            orientation: "vertical"
+                            size_hint_y: None
+                            height: self.minimum_height
+                            # pos_hint: {"center_y": 1}
+                            padding: [0,20,0,0]
+
+
+                            BoxLayout:
+                                orientation: "horizontal"
+                                pos_hint: {"top": 1}
+                                size_hint_y: None
+                                height: 30
+                                spacing: 5
+                                padding: [0, 15, 0, 15]
+
+
+                                Label:
+                                    text: "Buscar por descrição: "
+                                    size_hint_y: None
+                                    size_hint_x: None
+                                    height: 30
+                                    color: (0, 0, 0, 1)
+                                    width: 200
+
+                                TextInput:
+                                    id: descricao_buscar
+                                    multilne: "false"
+                                    size_hint_y: None
+                                    height: 30
+                                    multiline: False
+                                    on_text: root.buscar_por_descricao()
+
+                                Button:
+                                    text: "Buscar"
+                                    size_hint_x: None
+                                    size_hint_y: None
+                                    height: 30
+                                    width: 100
+                                    
+                            BoxLayout:
+                                id: compras_list
+                                orientation:"vertical"
+                                size_hint_y: None
+                                height: self.minimum_height
+                                spacing: 5
+                                pos_hint: {"y": 1}
+
+                            BoxLayout:
+                                orientation: "horizontal"
+                                size_hint_y: None
+                                height: 30
+
+                                Label:
+
+                                Button:
+                                    text: "Voltar"
+                                    size_hint_y: None
+                                    size_hint_x: None
+                                    height: 30
+                                    width: 100
+                                    on_release: root.voltar()
+                    
+            TabbedPanelItem:
+                id: cadastrar
+                text: "Cadastrar"
+
+                BoxLayout:
+                    orientation: "vertical"
+                    canvas:
+                        Color:
+                            rgba: 1,1,1,1
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+        
+                    BoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: None
+                        height: 150
+                        spacing: 5
+                        padding: [0, 5, 0, 5]
+
+                        # canvas:
+                        #     Color:
+                        #         rgba: 188/255, 228/255, 185/255, 1
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+                        BoxLayout:
+                            orientation:"vertical"
+                            size_hint_x: None
+                            width: 500
+                            spacing: 5
+
+                            BoxLayout:
+
+                                Label:
+                                    size_hint_x: None
+                                    width: 100
+                                    color: (0, 0, 0, 1)
+                                    text_size: self.size
+                                    halign: "left"
+                                    text: "Descrição: "
+                                    padding: [10, 0, 0, 0]
+
+                                TextInput:
+                                    id: descricao
+                                    multilne: "false"
+                            
+                            BoxLayout:
+
+                                Label:
+                                    size_hint_x: None
+                                    width: 100
+                                    color: (0, 0, 0, 1)
+                                    text_size: self.size
+                                    halign: "left"
+                                    text: "Valor: "
+                                    padding: [10, 0, 0, 5]
+
+                                TextInput:
+                                    id: valor
+                                    multilne: "false"
+                            
+                            BoxLayout:
+
+                                Label:
+                                    size_hint_x: None
+                                    width: 100
+                                    color: (0, 0, 0, 1)
+                                    text_size: self.size
+                                    halign: "left"
+                                    text: "Usuário: "
+                                    padding: [10, 0, 0, 5]
+
+                                TextInput:
+                                    id: usuario
+                                    multilne: "false"
+
+                        Label:
+                            size_hint_x: None
+                            width: 145
+
+                    BoxLayout:
+                        size_hint_x: None
+                        width: 500
+                        Label:
+
+                        Button:
+                            text: "Cadastrar"
+                            size_hint_x: None
+                            width: 100
+                            size_hint_y: None
+                            height: 30 
+                            pos_hint: {"top": 1}
+                            on_release: root.cadastrar_compra()
+
+
+
+                    Label:
+
+
+                        # Button:
+                        #     text: "Cadastrar"
+                        #     size_hint_x: None
+                        #     width: 100
+                        #     on_release: root.cadastrar_compra()
+
+        
+
+
+
+
+<Compra>:
+    orientation: "horizontal"
+    size_hint_y: None
+    height: 90
+    padding: [0, 5, 5, 5]
+
+    canvas:
+        Color:
+            rgba: 220/255, 220/255, 220/255, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation:"vertical"
+        size_hint_x: None
+        width: 500
+
+        Label:
+            color: (0, 0, 0, 1)
+            text_size: self.size
+            halign: "left"
+            text: "Descrição: " + root.descricao
+            padding: [10, 0, 0, 5]
+
+        Label:
+            color: (0, 0, 0, 1)
+            text_size: self.size
+            halign: "left"
+            text: "Valor: " + str(root.valor)
+            padding: [10, 0, 0, 5]
+
+        Label:
+            color: (0, 0, 0, 1)
+            text_size: self.size
+            halign: "left"
+            text: "Usuário: " + root.usuario
+            padding: [10, 0, 0, 5]
+
+        Label:
+            color: (0, 0, 0, 1)
+            text_size: self.size
+            halign: "left"
+            text: "Status: " + root.status
+            padding: [10, 0, 0, 5]
+
+    Label:
+        size_hint_x: None
+        width: 210
+
+
+    Button:
+        text: "Apagar"
+        disabled: root.edit
+        size_hint_x: None
+        width: 50
+        on_release: root.apagar_callback(root.codigo)

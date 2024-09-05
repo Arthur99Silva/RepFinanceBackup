@@ -1,0 +1,91 @@
+{
+    "currentId": 12,
+    "quantidade": 4,
+    "compras": [
+        {
+            "codigo": "1",
+            "descricao": "caf\u00e9",
+            "valor": 14.99,
+            "status": "pendente",
+            "usuario": {
+                "cod": "1",
+                "usuario": "alexandrade",
+                "senha": "alex",
+                "nome": "Alex de Andrade",
+                "saldo": 0,
+                "role": [
+                    "m",
+                    "rc"
+                ]
+            }
+        },
+        {
+            "codigo": "3",
+            "usuario": {
+                "cod": "1",
+                "usuario": "alexandrade",
+                "senha": "alex",
+                "nome": "Alex de Andrade",
+                "saldo": 0,
+                "role": [
+                    "m",
+                    "rc"
+                ]
+            },
+            "descricao": "Detergente",
+            "valor": "2.50",
+            "status": "pendente"
+        },
+        {
+            "codigo": "7",
+            "usuario": {
+                "cod": "1",
+                "usuario": "alexandrade",
+                "senha": "alex",
+                "nome": "Alex de Andrade",
+                "saldo": 0,
+                "role": [
+                    "m",
+                    "rc"
+                ]
+            },
+            "descricao": "Saco de lixo",
+            "valor": "20",
+            "status": "pendente"
+        },
+        {
+            "codigo": "11",
+            "usuario": {
+                "cod": "1",
+                "usuario": "alexandrade",
+                "senha": "alex",
+                "nome": "Alex de Andrade",
+                "saldo": 0,
+                "role": [
+                    "m",
+                    "rc"
+                ]
+            },
+            "descricao": "arroz",
+            "status": "Pendente",
+            "valor": 10.0
+        },
+        {
+            "codigo": "12",
+            "usuario": {
+                "cod": "1",
+                "usuario": "alexandrade",
+                "senha": "alex",
+                "nome": "Alex de Andrade",
+                "saldo": 0,
+                "role": [
+                    "m",
+                    "rc"
+                ]
+            },
+            "descricao": "sabao",
+            "status": "Pendente",
+            "valor": 2.9
+        }
+    ]
+}

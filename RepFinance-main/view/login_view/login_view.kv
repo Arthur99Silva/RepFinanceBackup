@@ -1,0 +1,80 @@
+<LoginView>:
+
+    BoxLayout:
+        orientation:"vertical"
+        padding: [200, 30, 200 ,0]
+        spacing: 5
+
+        Label:
+            text: "FAÇA LOGIN"
+            color: (0,0,0,1)
+            size_hint: (1, .5)
+
+            # canvas.before:
+            #     Color:
+            #         rgba: 1,1,0,1
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size
+
+
+
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 30
+
+            Label:
+                text: "Usuario: "
+                color: (0,0,0,1)
+                size_hint_y: None
+                height: 30
+
+
+            TextInput:
+                multiline: False
+                size_hint_y: None
+                height: 30
+                on_text: root.usuario = self.text
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 30
+
+            Label:
+                text: "Senha: "
+                color: (0,0,0,1)
+                size_hint_y: None
+                height: 30
+
+
+            TextInput:
+                password: True
+                password_mask: "*"
+                multiline: False
+                size_hint_y: None
+                height: 30
+                on_text: root.senha = self.text
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 30
+
+            Widget:
+
+            Button:
+                size: 75, 75
+                text: "Entrar"
+                on_release: root.login()
+
+        BoxLayout:
+            padding: 10
+
+            Button:
+                size_hint_y: None
+                height: 30
+                # size: 75, 75
+                text: ""

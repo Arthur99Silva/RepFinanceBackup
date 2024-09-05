@@ -1,0 +1,38 @@
+{
+    "currentId": 18,
+    "quantidade": 3,
+    "usuarios": [
+        {
+            "cod": "1",
+            "usuario": "alexandrade",
+            "senha": "alex",
+            "nome": "Alex de Andrade",
+            "saldo": 0,
+            "role": [
+                "m",
+                "rc"
+            ]
+        },
+        {
+            "cod": "2",
+            "usuario": "arthurantunes",
+            "senha": "arthur",
+            "nome": "Arthur Antunes",
+            "saldo": 0,
+            "role": [
+                "m",
+                "rc"
+            ]
+        },
+        {
+            "cod": "5",
+            "usuario": "rafa",
+            "senha": "rafa",
+            "nome": "Rafael",
+            "saldo": 0,
+            "role": [
+                "m"
+            ]
+        }
+    ]
+}

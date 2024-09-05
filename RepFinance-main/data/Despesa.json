@@ -1,0 +1,16 @@
+{
+    "currentId": 12,
+    "quantidade": 1,
+    "despesas": [
+        {
+            "codigo": "12",
+            "descricao": "agua",
+            "valor": 25.0,
+            "usuario": "alexandrade",
+            "categoria": "",
+            "mes_vencimento": 2,
+            "ano_vencimento": 2025,
+            "status": "Pendente"
+        }
+    ]
+}
