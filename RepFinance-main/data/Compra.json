@@ -1,5 +1,5 @@
 {
-    "currentId": 12,
+    "currentId": 13,
     "quantidade": 4,
     "compras": [
         {
@@ -71,7 +71,7 @@
             "valor": 10.0
         },
         {
-            "codigo": "12",
+            "codigo": "13",
             "usuario": {
                 "cod": "1",
                 "usuario": "alexandrade",
@@ -83,9 +83,9 @@
                     "rc"
                 ]
             },
-            "descricao": "sabao",
+            "descricao": "ovos",
             "status": "Pendente",
-            "valor": 2.9
+            "valor": 12.0
         }
     ]
 }

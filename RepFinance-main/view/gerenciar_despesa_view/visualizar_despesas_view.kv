@@ -1,322 +1,307 @@
 <VisualizarDespesasView>:
 
-    # canvas:
-    #     Color:
-    #         rgba: 188/255, 228/255, 185/255, 1
-    #     Rectangle:
-    #         size: self.size
-    #         pos: self.pos
-    Label:
-        text: "Gerenciar Despesas"
-        size_hint_y: None
-        height: 100
-        font_size: "45sp"
-        color: (0, 0, 0, 1) 
-        pos_hint: {"top": 1}
-        canvas.before:
-            Color:
-                rgba: 188/255, 228/255, 185/255, 1
-            Rectangle:
-                size: self.size
-                pos: self.pos
     BoxLayout:
         orientation: "vertical"
-        color: (0,0,0,1)
-        padding: [20, 115, 20, 15]
+        padding: [20, 15, 20, 15]
         spacing: 10
-        size_hint_x: None
-        width: 800
-        pos_hint: {"center_x": 0.5}
 
-        TabbedPanel:
-            id: panel
-            do_default_tab: False
+        Label:
+            text: "Gerenciar Despesas"
+            size_hint_y: None
+            height: 100
+            font_size: "40sp"
+            bold: True
+            color: (1, 1, 1, 1)
+            halign: 'center'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: 67/255, 194/255, 77/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [0, 0, 15, 15]
 
-            TabbedPanelItem:
-                id: buscar
-                background_color: (1,1,1,1)
-                text: "Buscar"
+        BoxLayout:
+            orientation: "vertical"
+            padding: [20, 20, 20, 20]
+            spacing: 10
+            size_hint_x: None
+            width: 800
+            pos_hint: {"center_x": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 245/255, 247/255, 245/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [15, 15, 15, 15]
 
-                BoxLayout:
-                    orientation: "vertical"
-                    canvas:
-                        Color:
-                            rgba: 1,1,1,1
-                        Rectangle:
-                            size: self.size
-                            pos: self.pos
+            TabbedPanel:
+                id: panel
+                do_default_tab: False
 
-                    ScrollView:
-                        BoxLayout:
-                            orientation: "vertical"
-                            size_hint_y: None
-                            height: self.minimum_height
-                            # pos_hint: {"center_y": 1}
-                            padding: [0,20,0,0]
+                TabbedPanelItem:
+                    id: buscar
+                    background_color: (1, 1, 1, 1)
+                    text: "Buscar"
 
+                    BoxLayout:
+                        orientation: "vertical"
+                        padding: [10, 10, 10, 10]
+                        spacing: 10
 
+                        ScrollView:
                             BoxLayout:
-                                orientation: "horizontal"
-                                pos_hint: {"top": 1}
-                                size_hint_y: None
-                                height: 30
-                                spacing: 5
-                                padding: [0, 15, 0, 15]
-
-
-                                Label:
-                                    text: "Buscar por descrição: "
-                                    size_hint_y: None
-                                    size_hint_x: None
-                                    height: 30
-                                    color: (0, 0, 0, 1)
-                                    width: 200
-
-                                TextInput:
-                                    id: descricao_buscar
-                                    multilne: "false"
-                                    size_hint_y: None
-                                    height: 30
-                                    multiline: False
-                                    on_text: root.buscar_por_descricao()
-
-                                Button:
-                                    text: "Buscar"
-                                    size_hint_x: None
-                                    size_hint_y: None
-                                    height: 30
-                                    width: 100
-                                    
-                            BoxLayout:
-                                id: despesas_list
-                                orientation:"vertical"
+                                orientation: "vertical"
                                 size_hint_y: None
                                 height: self.minimum_height
-                                spacing: 5
-                                pos_hint: {"y": 1}
+                                spacing: 10
+                                padding: [0, 20, 0, 0]
 
-                            Label:
-
-                            BoxLayout:
-                                orientation: "horizontal"
-                                size_hint_y: None
-                                height: 30
-
-                                Label:
-
-                                Button:
-                                    text: "Voltar"
+                                BoxLayout:
+                                    orientation: "horizontal"
                                     size_hint_y: None
-                                    size_hint_x: None
-                                    height: 30
-                                    width: 100
-                                    on_release: root.voltar()
+                                    height: 40
+                                    spacing: 10
+                                    padding: [0, 15, 0, 15]
 
-                        
-                    
-            TabbedPanelItem:
-                id: cadastrar
-                text: "Cadastrar"
+                                    Label:
+                                        text: "Buscar por descrição: "
+                                        size_hint_x: None
+                                        width: 200
+                                        color: (0, 0, 0, 1)
 
-                BoxLayout:
-                    orientation: "vertical"
-                    canvas:
-                        Color:
-                            rgba: 1,1,1,1
-                        Rectangle:
-                            size: self.size
-                            pos: self.pos
-        
+                                    TextInput:
+                                        id: descricao_buscar
+                                        multiline: False
+                                        size_hint_y: None
+                                        height: 40
+                                        hint_text: "Digite a descrição"
+                                        background_color: (1, 1, 1, 1)
+                                        on_text: root.buscar_por_descricao()
+
+                                    Button:
+                                        text: "Buscar"
+                                        size_hint_x: None
+                                        size_hint_y: None
+                                        height: 40
+                                        width: 100
+                                        background_color: 0.26, 0.7, 0.3, 1
+                                        color: (1, 1, 1, 1)
+                                        
+                                BoxLayout:
+                                    id: despesas_list
+                                    orientation: "vertical"
+                                    size_hint_y: None
+                                    height: self.minimum_height
+                                    spacing: 10
+
+                TabbedPanelItem:
+                    id: cadastrar
+                    text: "Cadastrar"
+
                     BoxLayout:
-                        orientation: "horizontal"
-                        size_hint_y: None
-                        height: 150
-                        spacing: 5
-                        padding: [0, 5, 0, 5]
-
-                        # canvas:
-                        #     Color:
-                        #         rgba: 188/255, 228/255, 185/255, 1
-                        #     Rectangle:
-                        #         size: self.size
-                        #         pos: self.pos
+                        orientation: "vertical"
+                        padding: [10, 10, 10, 10]
+                        spacing: 10
 
                         BoxLayout:
-                            orientation:"vertical"
+                            orientation: "horizontal"
+                            size_hint_y: None
+                            height: 200
+                            spacing: 10
+                            padding: [0, 10, 0, 10]
+
+                            BoxLayout:
+                                orientation: "vertical"
+                                size_hint_x: None
+                                width: 500
+                                spacing: 10
+
+                                BoxLayout:
+                                    orientation: "horizontal"
+                                    spacing: 10
+
+                                    Label:
+                                        text: "Descrição: "
+                                        size_hint_x: None
+                                        width: 100
+                                        color: (0, 0, 0, 1)
+
+                                    TextInput:
+                                        id: descricao
+                                        multiline: False
+                                        hint_text: "Digite a descrição"
+                                        background_color: (1, 1, 1, 1)
+
+                                BoxLayout:
+                                    orientation: "horizontal"
+                                    spacing: 10
+
+                                    Label:
+                                        text: "Valor: "
+                                        size_hint_x: None
+                                        width: 100
+                                        color: (0, 0, 0, 1)
+
+                                    TextInput:
+                                        id: valor
+                                        multiline: False
+                                        hint_text: "Digite o valor"
+                                        background_color: (1, 1, 1, 1)
+
+                                BoxLayout:
+                                    orientation: "horizontal"
+                                    spacing: 10
+
+                                    Label:
+                                        text: "Usuário: "
+                                        size_hint_x: None
+                                        width: 100
+                                        color: (0, 0, 0, 1)
+
+                                    TextInput:
+                                        id: usuario
+                                        multiline: False
+                                        hint_text: "Digite o usuário"
+                                        background_color: (1, 1, 1, 1)
+
+                                BoxLayout:
+                                    orientation: "horizontal"
+                                    spacing: 10
+
+                                    Label:
+                                        text: "Mês Vencimento: "
+                                        size_hint_x: None
+                                        width: 100
+                                        color: (0, 0, 0, 1)
+
+                                    TextInput:
+                                        id: mes_vencimento
+                                        multiline: False
+                                        hint_text: "Digite o mês"
+                                        background_color: (1, 1, 1, 1)
+
+                                BoxLayout:
+                                    orientation: "horizontal"
+                                    spacing: 10
+
+                                    Label:
+                                        text: "Ano vencimento: "
+                                        size_hint_x: None
+                                        width: 100
+                                        color: (0, 0, 0, 1)
+
+                                    TextInput:
+                                        id: ano_vencimento
+                                        multiline: False
+                                        hint_text: "Digite o ano"
+                                        background_color: (1, 1, 1, 1)
+
+                            Label:
+                                size_hint_x: None
+                                width: 145
+
+                        BoxLayout:
                             size_hint_x: None
                             width: 500
-                            spacing: 5
+                            spacing: 10
 
-                            BoxLayout:
+                            Widget:
 
-                                Label:
-                                    size_hint_x: None
-                                    width: 100
-                                    color: (0, 0, 0, 1)
-                                    text_size: self.size
-                                    halign: "left"
-                                    text: "Descrição: "
-                                    padding: [10, 0, 0, 0]
+                            Button:
+                                text: "Cadastrar"
+                                size_hint_x: None
+                                width: 120
+                                height: 40
+                                background_color: 0.26, 0.7, 0.3, 1
+                                color: 1, 1, 1, 1
+                                on_release: root.cadastrar_despesa()
 
-                                TextInput:
-                                    id: descricao
-                                    multilne: "false"
-                            
-                            BoxLayout:
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 40
+            padding: [0, 10, 0, 10]
 
-                                Label:
-                                    size_hint_x: None
-                                    width: 100
-                                    color: (0, 0, 0, 1)
-                                    text_size: self.size
-                                    halign: "left"
-                                    text: "Valor: "
-                                    padding: [10, 0, 0, 5]
+            Widget:
 
-                                TextInput:
-                                    id: valor
-                                    multilne: "false"
-                            
-                            BoxLayout:
-
-                                Label:
-                                    size_hint_x: None
-                                    width: 100
-                                    color: (0, 0, 0, 1)
-                                    text_size: self.size
-                                    halign: "left"
-                                    text: "Usuário: "
-                                    padding: [10, 0, 0, 5]
-
-                                TextInput:
-                                    id: usuario
-                                    multilne: "false"
-
-                            BoxLayout:
-
-                                Label:
-                                    size_hint_x: None
-                                    width: 100
-                                    color: (0, 0, 0, 1)
-                                    text_size: self.size
-                                    halign: "left"
-                                    text: "Mês Vencimento: "
-                                    padding: [10, 0, 0, 0]
-
-                                TextInput:
-                                    id: mes_vencimento
-                                    multilne: "false"
-
-                            BoxLayout:
-
-                                Label:
-                                    size_hint_x: None
-                                    width: 100
-                                    color: (0, 0, 0, 1)
-                                    text_size: self.size
-                                    halign: "left"
-                                    text: "Ano vencimento: "
-                                    padding: [10, 0, 0, 0]
-
-                                TextInput:
-                                    id: ano_vencimento
-                                    multilne: "false"
-
-                        Label:
-                            size_hint_x: None
-                            width: 145
-
-                    BoxLayout:
-                        size_hint_x: None
-                        width: 500
-                        Label:
-
-                        Button:
-                            text: "Cadastrar"
-                            size_hint_x: None
-                            width: 100
-                            size_hint_y: None
-                            height: 30 
-                            pos_hint: {"top": 1}
-                            on_release: root.cadastrar_despesa()
-
-
-
-                    Label:
-
-
-                        # Button:
-                        #     text: "Cadastrar"
-                        #     size_hint_x: None
-                        #     width: 100
-                        #     on_release: root.cadastrar_compra()
-
-        
-
-
-
+            Button:
+                text: "Voltar"
+                size_hint_x: None
+                size_hint_y: None
+                width: 100
+                height: 40
+                background_color: 0.7, 0.2, 0.2, 1
+                color: 1, 1, 1, 1
+                on_release: root.voltar()
 
 <Despesa>:
     orientation: "horizontal"
     size_hint_y: None
     height: 110
-    padding: [0, 5, 5, 5]
+    padding: [0, 10, 10, 10]
 
-    canvas:
+    canvas.before:
         Color:
-            rgba: 220/255, 220/255, 220/255, 1
-        Rectangle:
+            rgba: 235/255, 235/255, 235/255, 1
+        RoundedRectangle:
             size: self.size
             pos: self.pos
+            radius: [10, 10, 10, 10]
 
     BoxLayout:
-        orientation:"vertical"
+        orientation: "vertical"
         size_hint_x: None
         width: 500
+        spacing: 5
 
         Label:
             color: (0, 0, 0, 1)
             text_size: self.size
             halign: "left"
+            valign: "middle"
             text: "Descrição: " + root.descricao
-            padding: [10, 0, 0, 5]
 
         Label:
             color: (0, 0, 0, 1)
             text_size: self.size
             halign: "left"
+            valign: "middle"
             text: 'Valor: {:.2f}'.format(root.valor)
-            padding: [10, 0, 0, 5]
 
         Label:
             color: (0, 0, 0, 1)
             text_size: self.size
             halign: "left"
+            valign: "middle"
             text: "Usuário: " + root.usuario
-            padding: [10, 0, 0, 5]
 
         Label:
             color: (0, 0, 0, 1)
             text_size: self.size
             halign: "left"
+            valign: "middle"
             text: "Status: " + root.status
-            padding: [10, 0, 0, 5]
 
         Label: 
             color: (0, 0, 0, 1)
             text_size: self.size
             halign: "left"
+            valign: "middle"
             text: 'Vencimento: {:.0f}/{:.0f}'.format(root.mes_vencimento, root.ano_vencimento)
-            padding: [10, 0, 0, 5]
 
     Label:
         size_hint_x: None
-        width: 210
-
+        width: 150
 
     Button:
         text: "Apagar"
         disabled: root.edit
         size_hint_x: None
-        width: 50
+        width: 80
+        height: 40
+        background_color: 0.7, 0.2, 0.2, 1
+        color: 1, 1, 1, 1
         on_release: root.apagar_callback(root.codigo)
